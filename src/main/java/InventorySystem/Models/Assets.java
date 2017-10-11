@@ -6,7 +6,7 @@ public class Assets {
 
     private String prodBrand = "";
     private String prodModel = "";
-        private String prodDesc = "";
+    private String prodDesc = "";
     private double unitPrice = 0;
     private int invNum = 0;
     private int prodQuant = 0;
@@ -16,16 +16,6 @@ public class Assets {
     private String perDate = "";
     private String supName = "";
 
-
-    private String serialNum;
-
-    public String getSerialNum() {
-        return serialNum;
-    }
-
-    public void setSerialNum(String serialNum) {
-        this.serialNum = serialNum;
-    }
 
     public String getProdBrand() {
         return prodBrand;
@@ -114,7 +104,6 @@ public class Assets {
     public void setSupName(String supName) {
         this.supName = supName;
     }
-
 
 
 }
