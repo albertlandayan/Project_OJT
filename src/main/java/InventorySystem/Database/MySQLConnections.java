@@ -1,4 +1,4 @@
-package Assets.Database;
+package InventorySystem.Database;
 
 
 import java.sql.Connection;

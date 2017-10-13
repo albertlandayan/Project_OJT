@@ -1,4 +1,4 @@
-package Assets.Models;
+package InventorySystem.Models;
 
 public class Greeting {
 

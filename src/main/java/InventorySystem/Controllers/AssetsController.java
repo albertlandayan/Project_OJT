@@ -1,15 +1,15 @@
-package Assets.Controllers;
+package InventorySystem.Controllers;
 
-import Assets.Database.Database;
-import Assets.Models.Greeting;
+import InventorySystem.Database.Database;
+import InventorySystem.Models.Assets;
+import InventorySystem.Models.Greeting;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.print.attribute.standard.Media;
+import java.awt.*;
 import java.sql.SQLException;
 import java.util.Collection;
 import java.util.HashMap;
@@ -30,6 +30,7 @@ public class AssetsController {
             assetsMap = new HashMap<String, Assets>();
             nextId = "default";
         }
+
         assets.setSerialNum(nextId);
         nextId = nextId.concat("x");
         assetsMap.put(assets.getSerialNum(),assets);
@@ -38,7 +39,7 @@ public class AssetsController {
 
 
     //SHOULD GET ALL THE INVENTORY ITEMS AND BE DISPLAYED IF REQUESTED. CURRENT CODE IS JUST PRACTICE HERE
-    @RequestMapping(value="/viewAll",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="query/viewAll",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Collection<Assets>> getAllAssets(){
 
         Collection<Assets> assets = assetsMap.values();
@@ -55,10 +56,12 @@ public class AssetsController {
 
 
     //SHOULD ACCESS DB AND ADD ITEM FROM JSON POST
-    @RequestMapping(value="/addItem",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Assets createCustomer(final Assets params) throws SQLException {
+    @RequestMapping(value="query/addItem",method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody Assets createCustomer(@RequestBody final Assets params) throws SQLException {
         Database db = new Database();
         db.CreateEntry(params);
         return params;
     }
+
+    //oct 16 goal -> fix responses
 }

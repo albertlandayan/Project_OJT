@@ -1,8 +1,8 @@
-package Assets.Database;
+package InventorySystem.Database;
 
 
 
-import Assets.Models.Assets;
+import InventorySystem.Models.Assets;
 
 import java.sql.CallableStatement;
 import java.sql.SQLException;
