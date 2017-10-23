@@ -3,13 +3,15 @@ package InventorySystem.Database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
-public class MySQLConnections {
+public class MySQLConnection {
     Connection conn;
     String hostname = "127.0.0.1";
     String username = "root";
     String password = "1234";
     String url = "jdbc:mysql://127.0.0.1:3307/Project_OJT";
+
 
     public void Connect() {
 
@@ -21,8 +23,8 @@ public class MySQLConnections {
 
 
 
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        } catch (ClassNotFoundException | SQLException ex) {
+            System.out.println(ex.getMessage());
 
             System.out.println("Not Connected");
 
