@@ -3,8 +3,6 @@ package InventorySystem.Models;
 
 public class Assets {
 
-
-
         private String serialNum = "";
         private String prodBrand = "";
         private String prodModel = "";
