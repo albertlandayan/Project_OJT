@@ -120,7 +120,6 @@
           <tr>
               <th>Serial Number</th>
               <th>Item Description</th>
-              <th>Supplier ID</th>
               <th>Supplier Name</th>
               <th> Permit Number</th>
               <th> Permit Date</th>
@@ -139,7 +138,6 @@
           <tr>
             <td>23</td>
             <td>Test Item</td>
-            <td>1</td>
             <td>HP</td>
             <td>2</td>
             <td>11/16/2017</td>
@@ -217,7 +215,7 @@
     <li class="waves-effect waves-blue"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
         </ul>  </div>
 <p align="center" >
-<a href="">Home</a> | <a href="">About Us</a> | <a href="">Contact Us</a></p>
+<a href="dashboardadmin.jsp">Home</a> | <a href="adminabout.jsp">About Us</a> | <a href="admincontact.jsp">Contact Us</a></p>
 <p align="center" style="font-size: 15px">
 Kambi<br>
  Buriel | Landayan<br>  &copy; 2017 All Rights Reserved</p>

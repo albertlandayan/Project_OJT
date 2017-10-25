@@ -80,7 +80,7 @@
                         </li>
                           
                           
-                          
+                        
                       
 
 
@@ -90,7 +90,7 @@
                     </div>
                     <!-- nav center end-->
                         
-                    
+                    <div id="test">tetetetetetest</div>
                     
                     
                     
@@ -103,50 +103,48 @@
                     
                     
     <h5 style="font-family: Century Gothic; text-align: center">Add a Product:</h5>    
-    
+    <form method="post">
     <ul style="font-family: Century Gothic;" class="collapsible" data-collapsible="expandible">
+               
+ 
     <li>
       <div class="collapsible-header"><i class="material-icons">add_shopping_cart</i>Products</div>
       <div class="collapsible-body" style="text-align: center;">
         <div style="float: left; margin-left: 25%">
+        
         <div class="form-group " >
 	<label  for="serialnumber">Serial Number:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="serialnumber">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  id="serialnumber">
 	</div>
      
         <div class="form-group " >
 	<label for="brand">Brand:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="brand">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="brand">
 	</div>
               </div>    
           
         <div class="form-group " >
 	<label for="model">Model:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="model">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control" id="model">
 	</div>
         <div class="form-group" >
 	<label for="price">Price:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="price">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="price">
 	</div>
           
         <div class="form-group " >
 	<label for="description">Description:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="description">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="description">
 	</div>
 
-      
-      
-      
-      
       </div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">group_add</i>Suppliers</div>
       <div class="collapsible-body" style="text-align: center;">
-          
         <div class="form-group" >
 	<label  for="suppliername">Supplier Name:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="suppliername">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="suppliername">
 	</div>
            
       </div>
@@ -157,19 +155,19 @@
           <div style="float: left; margin-left: 25%">
         <div class="form-group"  >
 	<label  for="permitnumber">Permit Number:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="permitnumber">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="permitnumber">
 	</div>
 
               </div>    
           
         <div class="form-group " >
 	<label for="permitdate">Permit Date:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="permitdate">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="permitdate">
 	</div>
           
         <div class="form-group " >
 	<label for="permittype">Permit Type:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="permittype">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  id="permittype">
 	</div>
           
       </div>
@@ -181,7 +179,7 @@
       <div style="float: left; margin-left: 25%">
         <div class="form-group" >
 	<label  for="invoicenumber">Invoice Number:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="invoicenumber">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  id="invoicenumber">
 	</div>
      
 
@@ -189,29 +187,32 @@
           
         <div class="form-group " >
 	<label for="quantity">Quantity:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="quantity">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control" id="quantity">
 	</div>
 
           
         <div class="form-group " >
 	<label for="invoicedate">Invoice Date:</label><br>
-	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  name="invoicedate">
+	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  id="invoicedate">
 	</div>
       </div>
     </li>
+               
+
   </ul>
+    
 
     <div style="text-align: center; margin-top: 50px; font-family:Century Gothic;">
-<button class="btn waves-effect waves-light light-blue accent-3" type="submit" name="action">Submit
+<button class="btn waves-effect waves-light light-blue accent-3" value="Submit" type="submit" id="addbtn">Submit
     <i class="material-icons right">send</i>
   </button>
     </div>   
-    
+    </form>
     
 <div class="container" style="margin-top:50px;">
 
 <p align="center" >
-<a href="">Home</a> | <a href="">About Us</a> | <a href="">Contact Us</a></p>
+<a href="dashboardadmin.jsp">Home</a> | <a href="adminabout.jsp">About Us</a> | <a href="admincontact.jsp">Contact Us</a></p>
 <p align="center" style="font-size: 15px">
 Kambi<br>
 Buriel | Landayan<br>  &copy; 2017 All Rights Reserved</p>
@@ -241,18 +242,50 @@ Buriel | Landayan<br>  &copy; 2017 All Rights Reserved</p>
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
-      
-    
+        
   
   
-  
-   $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-       $(document).ready(function(){
+
+
+  $(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $(".modal").modal();
+    
+    
+    
   });
-  });
+
+  
+  
+
+  $('#addbtn').click(function(){
+
+     	$.ajax({
+     		type: "POST",
+     		url: "http://10.1.34.73:8080/assets/query/addItem",
+    			 // The key needs to match your method's input parameter (case-sensitive).
+ 
+		    data: JSON.stringify({"serialNum":$('#serialnumber').val(),"prodBrand":$('#brand').val()
+                    ,"prodModel":$('#model').val(),"prodDesc":$('#description').val(),"unitPrice":$('#price').val()
+                   ,"invNum":$('#invoicenumber').val(),"prodQuant":$('#quantity').val()
+                    ,"invDate":$('#invoicedate').val(),"perNum":$('#permitnumber').val()
+                   ,"perType":$('#permittype').val(),"perDate":$('#permitdate').val(),"supName":$('#suppliername').val()}),
+		    crossDomain: true,
+ 		    success: function(data){
+                    alert('successfully added!');
+            
+                    },
+ 
+ 		    error: function(errMsg) {
+ 		    	alert('FUCK OFFF');
+
+ 		    },
+ 		    dataType: "json",
+ 		    contentType: "application/json"
+ 		});
+  }); 
+
+
     </script>
 
 </body>

@@ -209,7 +209,7 @@
 <div class="container" style="margin-top:50px;">
 
 <p align="center" >
-<a href="">Home</a> | <a href="">About Us</a> | <a href="">Contact Us</a></p>
+<a href="dashboarduser.jsp">Home</a> | <a href="userabout.jsp">About Us</a> | <a href="usercontact.jsp">Contact Us</a></p>
 <p align="center" style="font-size: 15px">
 Kambi<br>
 Buriel | Landayan<br>  &copy; 2017 All Rights Reserved</p>
