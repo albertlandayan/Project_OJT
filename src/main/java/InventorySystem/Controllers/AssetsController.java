@@ -1,38 +1,58 @@
 package InventorySystem.Controllers;
 
 import InventorySystem.Database.Database;
-import InventorySystem.Models.*;
+import InventorySystem.Models.Assets;
+import InventorySystem.Models.DeleteAssets;
+import InventorySystem.Models.GetAssetsList;
+import InventorySystem.Models.GetTotalQuant;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLException;
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
-    @RequestMapping(value = "/assets")
+@RequestMapping(value = "/assets")
 public class AssetsController {
-
-
-    private static final String template = "Hello, %s!";
-    private final AtomicLong counter = new AtomicLong();
-    private static String nextId;
-
-
 
 
     //SHOULD GET ALL THE INVENTORY ITEMS AND BE DISPLAYED SORTED BY PRODUCT NAME. CURRENT CODE IS JUST PRACTICE HERE
     @RequestMapping(value="query/viewAll",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody GetAssetsList getAllAssets() throws SQLException {
         Database db = new Database();
-        return db.SearchAll();
+        return db.SearchSorted("default");
     }
 
+    //SHOULD GET ALL THE INVENTORY ITEMS AND BE DISPLAYED SORTED BY WHAT YOU WANT (invoice,permit,etc).
+    //Gonna make a document for which parameters are needed for specific sorting
+    @RequestMapping(value = "query/viewInv/{param}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody
+    GetAssetsList getAssetsByInvDate(@PathVariable String param) throws SQLException {
+        Database db = new Database();
+        return db.SearchSorted(param);
+    }
 
-    @RequestMapping("/greeting")
-    public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
-        return new Greeting(counter.incrementAndGet(),
-                String.format(template, name));
+    //SHOULD GET SPECIFIC INVENTORY ITEMS AND BE DISPLAYED SORTED BY WHAT YOU WANT (invoice,permit,etc).
+    //Gonna make a document for which parameters are needed for specific sorting
+    @RequestMapping(value = "query/searchAsset/products/{param}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody
+    GetAssetsList searchAssetPr(@PathVariable String param) throws SQLException {
+        Database db = new Database();
+        return db.SearchParams(param, 3);
+    }
+
+    @RequestMapping(value = "query/searchAsset/invDate/{param}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody
+    GetAssetsList searchAssetInvDate(@PathVariable String param) throws SQLException {
+        Database db = new Database();
+        return db.SearchParams(param, 1);
+    }
+
+    @RequestMapping(value = "query/searchAsset/perDate/{param}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody
+    GetAssetsList searchAssetPerDate(@PathVariable String param) throws SQLException {
+        Database db = new Database();
+        return db.SearchParams(param, 2);
     }
 
 
@@ -73,7 +93,6 @@ public class AssetsController {
         obj.setTotal(db.GetAllQuant());
         return obj;
     }
-
 
 
 }

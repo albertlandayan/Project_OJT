@@ -16,6 +16,7 @@ public class Assets {
         private String perDate = "";
         private String supName = "";
 
+
     public String getSerialNum() {
         return serialNum;
     }

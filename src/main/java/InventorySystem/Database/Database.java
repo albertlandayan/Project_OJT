@@ -36,11 +36,37 @@ public class Database {
 
     }
 
-    public GetAssetsList SearchAll() throws SQLException {
+
+    public GetAssetsList SearchSorted(String sortType) throws SQLException {
 
         con.Connect();
         CallableStatement cs = null;
-        cs = con.conn.prepareCall("{CALL `Project_OJT`.`SORT_PRODUCT_NAME`()}");
+        switch (sortType) {
+            case "INVDATE": {
+                cs = con.conn.prepareCall("{CALL `Project_OJT`.`SORT_INVOICE_DATE`()}");
+            }
+            break;
+            case "INVNUM": {
+                cs = con.conn.prepareCall("{CALL `Project_OJT`.`SORT_INVOICE_NUMBER`()}");
+            }
+            break;
+            case "PERDATE": {
+                cs = con.conn.prepareCall("{CALL `Project_OJT`.`SORT_PERMIT_DATE`()}");
+            }
+            break;
+            case "PERNUM": {
+                cs = con.conn.prepareCall("{CALL `Project_OJT`.`SORT_PERMIT_NUMBER`()}");
+            }
+            break;
+            case "SUPNAME": {
+                cs = con.conn.prepareCall("{CALL `Project_OJT`.`SORT_SUPPLIER_NAME`()}");
+            }
+            break;
+            default: {
+                cs = con.conn.prepareCall("{CALL `Project_OJT`.`SORT_PRODUCT_NAME`()}");
+            }
+        }
+
         ResultSet result = cs.executeQuery();
         GetAssetsList asl = new GetAssetsList();
         ArrayList<GetAssets> list = new ArrayList<>();
@@ -63,6 +89,51 @@ public class Database {
         return asl;
 
     }
+
+    public GetAssetsList SearchParams(String search, int type) throws SQLException {
+
+        con.Connect();
+        CallableStatement cs = null;
+        switch (type) {
+            case 1: {
+                cs = con.conn.prepareCall("{CALL `Project_OJT`.`SORT_INVOICE_DATE_PARAMETER`(?)}");
+            }
+            break;
+            case 2: {
+                cs = con.conn.prepareCall("{CALL `Project_OJT`.`SORT_PERMIT_DATE_PARAMETER`(?)}");
+            }
+            break;
+            default: {
+                cs = con.conn.prepareCall("{CALL `Project_OJT`.`SORT_ITEMINFO_PARAMETER`(?)}");
+            }
+        }
+        cs.setString(1, search);
+        ResultSet result = cs.executeQuery();
+        GetAssetsList asl = new GetAssetsList();
+        ArrayList<GetAssets> list = new ArrayList<>();
+        while (result.next()) {
+            GetAssets al = new GetAssets();
+            al.setSerialNum(result.getString(1));
+            al.setItemInfo(result.getString(2));
+            al.setSupName(result.getString(3));
+            al.setPerNum(Integer.parseInt(result.getString(4)));
+            al.setPerDate(result.getString(5));
+            al.setInvNum(Integer.parseInt(result.getString(6)));
+            al.setInvDate(result.getString(7));
+            al.setProdQuant(Integer.parseInt(result.getString(8)));
+            al.setUnitPrice(Double.parseDouble(result.getString(9)));
+            al.setTotalPrice(Integer.parseInt(result.getString(10)));
+            list.add(al);
+        }
+        asl.setList(list);
+        con.conn.close();
+        return asl;
+
+    }
+
+
+
+
 
     public void UpdateItem(Assets assets) throws SQLException {
 
