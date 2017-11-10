@@ -22,21 +22,17 @@ public class MySQLConnection {
             System.out.println("Connected");
 
 
-
         } catch (ClassNotFoundException | SQLException ex) {
             System.out.println(ex.getMessage());
 
             System.out.println("Not Connected");
 
-        }
-        finally{
-
+        } finally {
 
 
         }
 
     }
-
 
 
 }

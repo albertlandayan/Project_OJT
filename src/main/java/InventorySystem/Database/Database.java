@@ -1,4 +1,5 @@
 package InventorySystem.Database;
+
 import InventorySystem.Models.Assets;
 import InventorySystem.Models.GetAssets;
 import InventorySystem.Models.GetAssetsList;
@@ -19,7 +20,7 @@ public class Database {
         cs = con.conn.prepareCall("{call INSERT_ITEM(?,?,?,?,?,?,?,?,?,?,?,?)}");
 
         //population of parameters
-        cs.setString(1,assets.getSerialNum());
+        cs.setString(1, assets.getSerialNum());
         cs.setString(2, assets.getProdBrand());
         cs.setString(3, assets.getProdModel());
         cs.setString(4, assets.getProdDesc());
@@ -130,9 +131,6 @@ public class Database {
         return asl;
 
     }
-
-
-
 
 
     public void UpdateItem(Assets assets) throws SQLException {

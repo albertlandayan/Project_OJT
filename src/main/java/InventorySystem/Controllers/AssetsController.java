@@ -17,8 +17,9 @@ public class AssetsController {
 
 
     //SHOULD GET ALL THE INVENTORY ITEMS AND BE DISPLAYED SORTED BY PRODUCT NAME. CURRENT CODE IS JUST PRACTICE HERE
-    @RequestMapping(value="query/viewAll",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public @ResponseBody GetAssetsList getAllAssets() throws SQLException {
+    @RequestMapping(value = "query/viewAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody
+    GetAssetsList getAllAssets() throws SQLException {
         Database db = new Database();
         return db.SearchSorted("default");
     }
@@ -57,7 +58,7 @@ public class AssetsController {
 
 
     //SHOULD TAKE REQUEST, CONVERT TO Assets Model from JSON, ACCESS DB AND ADD ITEM FROM JSON POST
-    @RequestMapping(value="query/addItem",method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "query/addItem", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
     void addItem(@RequestBody Assets params) throws SQLException {

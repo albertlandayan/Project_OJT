@@ -4,6 +4,8 @@ import java.util.List;
 
 public class GetAssetsList {
 
+    List<GetAssets> list;
+
     public List<GetAssets> getList() {
         return list;
     }
@@ -11,6 +13,4 @@ public class GetAssetsList {
     public void setList(List<GetAssets> list) {
         this.list = list;
     }
-
-    List<GetAssets> list;
 }

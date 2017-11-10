@@ -3,18 +3,18 @@ package InventorySystem.Models;
 
 public class Assets {
 
-        private String serialNum = "";
-        private String prodBrand = "";
-        private String prodModel = "";
-        private String prodDesc = "";
-        private double unitPrice = 0;
-        private int invNum = 0;
-        private int prodQuant = 0;
-        private String invDate = "";
-        private int perNum = 0;
-        private String perType = "";
-        private String perDate = "";
-        private String supName = "";
+    private String serialNum = "";
+    private String prodBrand = "";
+    private String prodModel = "";
+    private String prodDesc = "";
+    private double unitPrice = 0;
+    private int invNum = 0;
+    private int prodQuant = 0;
+    private String invDate = "";
+    private int perNum = 0;
+    private String perType = "";
+    private String perDate = "";
+    private String supName = "";
 
 
     public String getSerialNum() {
@@ -24,6 +24,7 @@ public class Assets {
     public void setSerialNum(String serialNum) {
         this.serialNum = serialNum;
     }
+
     public String getProdBrand() {
         return prodBrand;
     }
