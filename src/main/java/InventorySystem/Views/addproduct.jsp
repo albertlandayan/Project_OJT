@@ -13,8 +13,8 @@
 
     
     <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
-    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
-    <script type="text/javascript" src="engine1/jquery.js"></script>
+<!--    <link rel="stylesheet" type="text/css" href="engine1/style.css" />
+    <script type="text/javascript" src="engine1/jquery.js"></script>-->
     <!-- End WOWSlider.com HEAD section -->
     <!-- Custom CSS -->
     <link href="css/yoyo.css" rel="stylesheet">
@@ -25,6 +25,7 @@
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>	 
     <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -90,7 +91,7 @@
                     </div>
                     <!-- nav center end-->
                         
-
+     
                     
                     
                     
@@ -102,16 +103,13 @@
                     
                     
                     
-    <h5 style="font-family: Century Gothic; text-align: center">Add a Product:</h5>    
-    <form method="post">
-    <ul style="font-family: Century Gothic;" class="collapsible" data-collapsible="expandible">
-               
- 
-    <li>
-      <div class="collapsible-header"><i class="material-icons">add_shopping_cart</i>Products</div>
-      <div class="collapsible-body" style="text-align: center;">
-        <div style="float: left; margin-left: 25%">
-        
+                    <h4 style="font-family: Century Gothic; text-align: center">Add a Product:</h4>  <br><br>
+    <form method="POST">
+        <div style="font-family: century gothic; font-size: 17px; text-align: center">
+            <div style=" "><i class="material-icons">add_shopping_cart</i>Products</div><br>
+      
+      <div style="text-align: center">
+        <div style="float: left; margin-left: 35%">
         <div class="form-group " >
 	<label  for="serialnumber">Serial Number:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  id="serialnumber">
@@ -121,8 +119,8 @@
 	<label for="brand">Brand:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="brand">
 	</div>
-              </div>    
-          
+        </div>
+          <div style="margin-right: 35%">
         <div class="form-group " >
 	<label for="model">Model:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control" id="model">
@@ -131,82 +129,87 @@
 	<label for="price">Price:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="price">
 	</div>
-          
+          </div>
         <div class="form-group " >
 	<label for="description">Description:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="description">
 	</div>
-
-      </div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">group_add</i>Suppliers</div>
-      <div class="collapsible-body" style="text-align: center;">
+          </div>
+            <br>
+    
+    
+            <div style=""><i class="material-icons">group_add</i>Suppliers</div><br>
+      <div style="text-align: center">
         <div class="form-group" >
 	<label  for="suppliername">Supplier Name:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="suppliername">
 	</div>
-           
-      </div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">attach_money</i>Purchasing Permit</div>
-      <div class="collapsible-body" style="text-align: center;">
-          <div style="float: left; margin-left: 25%">
+      </div><br>
+      
+    
+    
+            <div style=""><i class="material-icons">attach_money</i>Purchasing Permit</div><br>
+      
+      <div style="text-align: center">
+          <div style="float: left; margin-left: 35%">
         <div class="form-group"  >
 	<label  for="permitnumber">Permit Number:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="permitnumber">
 	</div>
-
-              </div>    
-          
+          </div>
+                
+          <div style="margin-right: 35%">
         <div class="form-group " >
 	<label for="permitdate">Permit Date:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"   id="permitdate">
 	</div>
-          
+          </div>
         <div class="form-group " >
 	<label for="permittype">Permit Type:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  id="permittype">
 	</div>
-          
-      </div>
-    </li>
-        <li>
-      <div class="collapsible-header"><i class="material-icons">attach_money</i>Purchasing Invoice</div>
-      <div class="collapsible-body" style="text-align: center;">
+      </div><br>
       
-      <div style="float: left; margin-left: 25%">
+    
+        
+            <div style=""><i class="material-icons">attach_money</i>Purchasing Invoice</div> <br>
+      
+      
+      <div style="text-align: center">
+          <div style="float: left; margin-left: 35%">
         <div class="form-group" >
 	<label  for="invoicenumber">Invoice Number:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  id="invoicenumber">
 	</div>
-     
+          </div>
 
-              </div>    
-          
+                
+          <div style="margin-right: 35%">
         <div class="form-group " >
 	<label for="quantity">Quantity:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control" id="quantity">
 	</div>
-
+          </div>
           
         <div class="form-group " >
 	<label for="invoicedate">Invoice Date:</label><br>
 	<input type="text"  style= " width:200px ; display: inline-block; " class="form-control"  id="invoicedate">
 	</div>
-      </div>
-    </li>
+          </div>
+        </div>
+      <div>
+    
                
 
-  </ul>
+  
     
 
     <div style="text-align: center; margin-top: 50px; font-family:Century Gothic;">
-<button class="btn waves-effect waves-light light-blue accent-3" value="Submit" type="submit" id="addbtn">Submit
+<button class="btn waves-effect waves-light light-blue accent-3" type="submit" id="addbutton">Submit
     <i class="material-icons right">send</i>
   </button>
     </div>   
+      </div>
     </form>
     
 <div class="container" style="margin-top:50px;">
@@ -238,57 +241,54 @@ Buriel | Landayan<br>  &copy; 2017 All Rights Reserved</p>
    
     <!-- Menu Toggle Script -->
     <script>
-       $("#menu-toggle").click(function(e) {
-           e.preventDefault();
-           $("#wrapper").toggleClass("toggled");
-       });
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+        
+  
+  
 
 
 
+  
+  
+      
+
+  $('#addbutton').click(function(){
+
+     	$.ajax({
+                    type: "POST",
+                    url: "http://10.1.34.190:8080/assets/query/addItem",
+		    data: JSON.stringify({"serialNum":$('#serialnumber').val(),"prodBrand":$('#brand').val(),"prodModel":$('#model').val(),"prodDesc":$('#description').val(),"unitPrice":$('#price').val(),"invNum":$('#invoicenumber').val(),"prodQuant":$('#quantity').val(),"invDate":$('#invoicedate').val(),"perNum":$('#permitnumber').val(),"perType":$('#permittype').val(),"perDate":$('#permitdate').val(),"supName":$('#suppliername').val()}),
+		    crossDomain: true,
+ 
+ 		    success: function(result){
+                    alert (result);
+            
+                    },
+ 
+ 		    error: function(errMsg) {
+ 		    	alert('FUCK OFFF');
+
+ 		    },
+                    dataType: "json",
+ 		  
+                    contentType:"application/json"
+ 		});
+         }); 
+
+  
+    $(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    $(".modal").modal();
+    
+    
+    
+  });
 
 
-     $(document).ready(function(){
-       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-       $(".modal").modal();
-
-
-
-     });
-
-
-
-
-     $('#addbtn').click(function(){
-
-        	$.ajax({
-        		type: "POST",
-        		url: "http://10.1.34.190:8080/assets/query/addItem",
-       			 // The key needs to match your method's input parameter (case-sensitive).
-
-   		    data: JSON.stringify({"serialNum":$('#serialnumber').val(),"prodBrand":$('#brand').val()
-                       ,"prodModel":$('#model').val(),"prodDesc":$('#description').val(),"unitPrice":$('#price').val()
-                      ,"invNum":$('#invoicenumber').val(),"prodQuant":$('#quantity').val()
-                       ,"invDate":$('#invoicedate').val(),"perNum":$('#permitnumber').val()
-                      ,"perType":$('#permittype').val(),"perDate":$('#permitdate').val(),"supName":$('#suppliername').val()}),
-   		    crossDomain: true,
-                       dataType: "json",
-    		    contentType: "application/json",
-    		    success: function(data){
-                       alert('successfully added!');
-
-                       },
-
-    		    error: function(errMsg) {
-    		    	alert('FUCK OFFF');
-
-    		    }
-
-    		});
-     });
-
-
-       </script>
-
+    </script>
 
 </body>
 

@@ -115,8 +115,8 @@
                            
                     
         <h5 style="font-family: Century Gothic; text-align: center">Product Summary:</h5>     
-        <table class="highlight centered">
-        <thead>
+        <table id ="content" class="highlight centered">
+       
           <tr>
               <th>Serial Number</th>
               <th>Item Description</th>
@@ -132,24 +132,15 @@
 
        
           </tr>
-        </thead>
+        
 
-        <tbody>
-          <tr>
-            <td>23</td>
-            <td>Test Item</td>
-            <td>HP</td>
-            <td>2</td>
-            <td>11/16/2017</td>
-            <td>1</td>
-            <td>11/16/2017</td>
-            <td>2</td>
-            <td>122131</td>
-            <td>1241241</td>
-            <td><a href="#edit2"   >Edit</a>/<a href="">Delete</a></td>
-          </tr>
+        
+         
+   
+<!--            <td><a href="#edit2"   >Edit</a>/<a href="">Delete</a></td>-->
+         
           
-        </tbody>
+       
       </table>
                     
                     
@@ -250,13 +241,45 @@ Kambi<br>
   
   
   
-   $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-       $(document).ready(function(){
+
+$(document).ready(function(){
     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
     $(".modal").modal();
+    
+    
+    
+    jQuery.support.cors = true;
+
+    $.ajax(
+    {
+        type: "GET",
+        url: "http://10.1.34.190:8080/assets/query/viewAll",
+        data: "{}",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+//        cache: false,
+        success: function (data) {
+            
+        var trHTML = '';
+                
+        $.each(data.Countries, function (i, item) {
+            
+            trHTML += '<tr><td>' + data.Countries[i] + '</td><td>' + data.Cities[i] + '</td></tr>';
+        });
+        
+        $('#location').append(trHTML);
+        
+        },
+        
+        error: function (msg) {
+            
+            alert(msg.responseText);
+        }
+    });
+    
+    
   });
-  });
+
     </script>
 
 </body>
