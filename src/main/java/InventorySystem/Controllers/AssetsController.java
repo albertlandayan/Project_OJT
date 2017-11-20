@@ -61,7 +61,7 @@ public class AssetsController {
     Response addItem(@RequestBody Assets params) throws SQLException {
         Database db = new Database();
         db.CreateEntry(params);
-        Response res = new Response();
+        Response res = new Response(); 
         res.setStatus("200");
         res.setMessage("Success!");
         return res;
