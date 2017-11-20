@@ -90,7 +90,7 @@
                     </div>
                     <!-- nav center end-->
                         
-                    <div id="test">tetetetetetest</div>
+
                     
                     
                     
@@ -238,55 +238,57 @@ Buriel | Landayan<br>  &copy; 2017 All Rights Reserved</p>
    
     <!-- Menu Toggle Script -->
     <script>
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-        
-  
-  
+       $("#menu-toggle").click(function(e) {
+           e.preventDefault();
+           $("#wrapper").toggleClass("toggled");
+       });
 
 
-  $(document).ready(function(){
-    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-    $(".modal").modal();
-    
-    
-    
-  });
-
-  
-  
-
-  $('#addbtn').click(function(){
-
-     	$.ajax({
-     		type: "POST",
-     		url: "http://10.1.34.73:8080/assets/query/addItem",
-    			 // The key needs to match your method's input parameter (case-sensitive).
- 
-		    data: JSON.stringify({"serialNum":$('#serialnumber').val(),"prodBrand":$('#brand').val()
-                    ,"prodModel":$('#model').val(),"prodDesc":$('#description').val(),"unitPrice":$('#price').val()
-                   ,"invNum":$('#invoicenumber').val(),"prodQuant":$('#quantity').val()
-                    ,"invDate":$('#invoicedate').val(),"perNum":$('#permitnumber').val()
-                   ,"perType":$('#permittype').val(),"perDate":$('#permitdate').val(),"supName":$('#suppliername').val()}),
-		    crossDomain: true,
- 		    success: function(data){
-                    alert('successfully added!');
-            
-                    },
- 
- 		    error: function(errMsg) {
- 		    	alert('FUCK OFFF');
-
- 		    },
- 		    dataType: "json",
- 		    contentType: "application/json"
- 		});
-  }); 
 
 
-    </script>
+
+     $(document).ready(function(){
+       // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+       $(".modal").modal();
+
+
+
+     });
+
+
+
+
+     $('#addbtn').click(function(){
+
+        	$.ajax({
+        		type: "POST",
+        		url: "http://10.1.34.190:8080/assets/query/addItem",
+       			 // The key needs to match your method's input parameter (case-sensitive).
+
+   		    data: JSON.stringify({"serialNum":$('#serialnumber').val(),"prodBrand":$('#brand').val()
+                       ,"prodModel":$('#model').val(),"prodDesc":$('#description').val(),"unitPrice":$('#price').val()
+                      ,"invNum":$('#invoicenumber').val(),"prodQuant":$('#quantity').val()
+                       ,"invDate":$('#invoicedate').val(),"perNum":$('#permitnumber').val()
+                      ,"perType":$('#permittype').val(),"perDate":$('#permitdate').val(),"supName":$('#suppliername').val()}),
+   		    crossDomain: true,
+                       dataType: "json",
+    		    contentType: "application/json",
+    		    success: function(data){
+                       alert('successfully added!');
+
+                       },
+
+    		    error: function(errMsg) {
+    		    	alert('FUCK OFFF');
+
+    		    }
+
+    		});
+     });
+
+
+       </script>
+
 
 </body>
 
