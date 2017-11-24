@@ -3,6 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Project_OJT.iml" filepath="$PROJECT_DIR$/.idea/modules/Project_OJT.iml" />
+<<<<<<< HEAD
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Project_OJT_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Project_OJT_main.iml" group="Project_OJT" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Project_OJT_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Project_OJT_test.iml" group="Project_OJT" />
+>>>>>>> 0e0e0d5062866d11fdaf6a509b4328b29eeaf428
     </modules>
   </component>
 </project>
